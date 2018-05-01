@@ -20,7 +20,7 @@ const dodgerRightEdge = positionToInteger(DODGER.style.left) + 40;
 
 const rockLeftEdge = positionToInteger(rock.style.left);
 
-const rockRightEdge = positionToInteger(rock.style.right) + 20;
+const rockRightEdge = positionToInteger(rock.style.left) + 20;
 
  if (rockLeftEdge < dodgerLeftEdge && rockRightEdge >        dodgerLeftEdge ||
           rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge ||
