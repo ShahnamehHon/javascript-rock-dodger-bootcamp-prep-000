@@ -1,31 +1,31 @@
-const DODGER = document.getElementById('dodger')
-const GAME = document.getElementById('game')
-const GAME_HEIGHT = 400
-const GAME_WIDTH = 400
-const LEFT_ARROW = 37 // use e.which!
-const RIGHT_ARROW = 39 // use e.which!
-const ROCKS = []
-const START = document.getElementById('start')
+const DODGER = document.getElementById('dodger');
+const GAME = document.getElementById('game');
+const GAME_HEIGHT = 400;
+const GAME_WIDTH = 400;
+const LEFT_ARROW = 37;
+const RIGHT_ARROW = 39;
+const ROCKS = [];
+const START = document.getElementById('start');
 
-var gameInterval = null
+var gameInterval = null;
 
 function checkCollision(rock) {
  
-   const top = positionToInteger(rock.style.top)
+   const top = positionToInteger(rock.style.top);
 
   if (top > 360) {
-const dodgerLeftEdge = positionToInteger(DODGER.style.left)
+const dodgerLeftEdge = positionToInteger(DODGER.style.left);
 
 const dodgerRightEdge = positionToInteger(DODGER.style.right) + 40;
 
-const rockLeftEdge = positionToInteger(rock.style.left)
+const rockLeftEdge = positionToInteger(rock.style.left);
 
 const rockRightEdge = positionToInteger(rock.style.right) + 20;
 
  if (rockLeftEdge < dodgerLeftEdge && rockRightEdge >        dodgerLeftEdge ||
           rockLeftEdge >= dodgerLeftEdge && rockRightEdge <= dodgerRightEdge ||
                 rockLeftEdge <= dodgerRightEdge && rockRightEdge >= dodgerRightEdge) {
-      return true
+      return true;
     }
   }
 }
