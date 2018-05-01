@@ -16,7 +16,7 @@ function checkCollision(rock) {
   if (top > 360) {
 const dodgerLeftEdge = positionToInteger(DODGER.style.left);
 
-const dodgerRightEdge = positionToInteger(DODGER.style.right) + 40;
+const dodgerRightEdge = positionToInteger(DODGER.style.left) + 40;
 
 const rockLeftEdge = positionToInteger(rock.style.left);
 
