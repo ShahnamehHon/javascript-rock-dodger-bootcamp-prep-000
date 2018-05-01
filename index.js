@@ -46,7 +46,7 @@ function createRock(x) {
    window.requestAnimationFrame(moveRock);
 
   function moveRock() {
-    if (checkCollision(rock)) {
+   if (checkCollision(rock)) {
             endGame();
         }
 
