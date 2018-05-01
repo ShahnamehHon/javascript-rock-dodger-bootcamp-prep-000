@@ -43,22 +43,28 @@ function createRock(x) {
 
    GAME.appendChild(rock);
  
- function moveRock() {
+   window.requestAnimationFrame(moveRock);
+
+  function moveRock() {
    if (checkCollision(rock)) {
             endGame();
-    
-     
-   } else if (top < GAME_HEIGHT) {
-      rock.style.top = `${top += 2}px`;
-      window.requestAnimationFrame(moveRock);
-    
-     
-   } else if (top >= GAME_HEIGHT) {
-      rock.remove();
+        }
+
+   if (rock.style.top < 356) {
+          moveRock();
+       }
+
+   if (rock.style.top >= 360) {
+
+        }
     }
-   }
- 
- window.requestAnimationFrame(moveRock);
+  
+moveRock();
+  
+  ROCKS.push(rock);
+
+  return rock;
+}
 
 
 function endGame() {
@@ -116,5 +122,4 @@ function start() {
   gameInterval = setInterval(function() {
     createRock(Math.floor(Math.random() *  (GAME_WIDTH - 20)))
   }, 1000)
-}
 }
