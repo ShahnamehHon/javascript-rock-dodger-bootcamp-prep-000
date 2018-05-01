@@ -59,15 +59,11 @@ function createRock(x) {
         }
     }
   
+moveRock();
+  
+  ROCKS.push(rock);
 
-  // We should kick of the animation of the rock around here
-
-  // Add the rock to ROCKS so that we can remove all rocks
-  // when there's a collision
-  ROCKS.push(rock)
-
-  // Finally, return the rock element you've created
-  return rock
+  return rock;
 }
 
 /**
