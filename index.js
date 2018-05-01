@@ -68,21 +68,25 @@ moveRock();
 
 
 function endGame() {
-   window.clearInterval(gameInterval)
-   window.removeEventListener('keydown', moveDodger)
-   alert('YOU LOSE!')
+   window.clearInterval(gameInterval);
+   window.removeEventListener('keydown', moveDodger);
+   alert('YOU LOSE!');
 }
 
 function moveDodger(e) {
-  // implement me!
-  /**
-   * This function should call `moveDodgerLeft()`
-   * if the left arrow is pressed and `moveDodgerRight()`
-   * if the right arrow is pressed. (Check the constants
-   * we've declared for you above.)
-   * And be sure to use the functions declared below!
-   */
+ switch (e.which) {
+        case LEFT_ARROW:
+            e.preventDefault();
+            e.stopPropagation();
+            moveDodgerLeft();
+            break;
+        case RIGHT_ARROW:
+            e.preventDefault();
+            moveDodgerRight();
+            break;
+    }
 }
+
 
 function moveDodgerLeft() {
   // implement me!
