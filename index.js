@@ -42,9 +42,7 @@ function createRock(x) {
   rock.style.top = top;
 
    GAME.appendChild(rock);
- 
-   window.requestAnimationFrame(moveRock);
-
+   
   function moveRock() {
     rock.style.top = `${top += 2}px`
    if (checkCollision(rock)) {
@@ -54,7 +52,7 @@ function createRock(x) {
    } else {
     rock.remove()
     }
-    }
+ }
 
 
   window.requestAnimationFrame(moveRock)
