@@ -46,23 +46,16 @@ function createRock(x) {
  function moveRock() {
    if (checkCollision(rock)) {
             endGame();
-        }
-
-   if (rock.style.top < 356) {
-          moveRock();
-       }
-
-   if (rock.style.top >= 360) {
-
-        }
+   }
+    } else if (top < GAME_HEIGHT) {
+      rock.style.top = `${top += 2}px`;
+      window.requestAnimationFrame(moveRock);
+    } else if (top >= GAME_HEIGHT) {
+      rock.remove();
     }
-  
-  window.requestAnimationFrame(moveRock);
-  
-  ROCKS.push(rock);
-
-  return rock;
-}
+   }
+ 
+ window.requestAnimationFrame(moveRock);
 
 
 function endGame() {
